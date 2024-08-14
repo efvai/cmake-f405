@@ -1,0 +1,9 @@
+connect
+reset
+halt
+erase
+loadfile D:/code/stm/cmake-f405/build/debug/cmake-f405.elf  0x08000000
+verifybin D:/code/stm/cmake-f405/build/debug/cmake-f405.bin 0x08000000
+reset
+go
+quit

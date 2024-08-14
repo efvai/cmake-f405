@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cmake",
+			"label": "CMake: build",
+			"command": "build",
+			"targets": [
+				"all",
+				"--verbose"
+			],
+			"preset": "${command:cmake.activeBuildPresetName}",
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "CMake build task"
+		},
+		{
+			"type": "shell",
+			"label": "jlink-flash",
+			"command": "D:/soft/JLink_V794b/jlink",
+			"args": [
+			  "-device", "STM32F405RG",
+        	  "-if", "SWD",
+        	  "-speed", "4000",
+        	  "-CommanderScript", "${workspaceFolder}/commandfile.jlink"
+			],
+			"dependsOn": "CMake: build",
+			"problemMatcher": [],
+			"group": {
+			  "kind": "build",
+			  "isDefault": true 
+			},
+			"detail": "Builds project and flashes firmware."
+	  
+		  }
+	]
+}

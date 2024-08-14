@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/debug/cmake-f405.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "preLaunchTask": "jlink-flash",
+            "servertype": "jlink",
+            "serverpath": "D:/soft/JLink_V794b/JLinkGDBServerCL.exe",
+            "serverArgs": ["-speed", "4000"],
+            "device": "STM32F405RG",
+            "interface": "swd",
+            "showDevDebugOutput": "raw",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "svdFile": "D:/code/stm/cmake-f405/APM32F40x.svd",
+            "armToolchainPath": "D:/soft/gnu-arm/bin/"
+        }
+    ]
+}
